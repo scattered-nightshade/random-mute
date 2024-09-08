@@ -9,7 +9,6 @@ export class PingCommand extends InteractionCommand {
         this.data = new SlashCommandBuilder()
             .setName(this.name)
             .setDescription(this.description)
-            .setDMPermission(false)
             .setNSFW(this.nsfw);
     }
 

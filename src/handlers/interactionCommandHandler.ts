@@ -12,8 +12,8 @@ export class InteractionCommandHandler extends BotHandler {
     }
 
     async execute(client: BotClient): Promise<void> {
-        fs.readdirSync('./build/commands/interaction').forEach(async (dir) => {
-            const commands: string[] = fs.readdirSync(`./build/commands/interaction/${dir}/`).filter((file) => file.endsWith('.js'));
+        fs.readdirSync('./dist/commands/interaction').forEach(async (dir) => {
+            const commands: string[] = fs.readdirSync(`./dist/commands/interaction/${dir}/`).filter((file) => file.endsWith('.js'));
             await this.loadCommands(client, dir, commands);
         });
     }
@@ -23,7 +23,7 @@ export class InteractionCommandHandler extends BotHandler {
         const commandPathLog: string[] = [];
 
         for (const file of commands) {
-            const commandPath = path.resolve(`./build/commands/interaction/${dir}/${file}`);
+            const commandPath = path.resolve(`./dist/commands/interaction/${dir}/${file}`);
 
             commandPathLog.push(commandPath);
 

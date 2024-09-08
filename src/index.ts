@@ -5,7 +5,7 @@ import { config } from 'dotenv';
 config();
 
 mongoConnect();
-
+    
 console.log('Starting bot...');
 
 const client = new BotClient();

@@ -74,7 +74,7 @@ export class BotClient extends Client {
     // Load the command categories from the filesystem
     private loadCommandCategories() {
         // Get a list of subdirectories in the commands directory
-        const categoryFiles = readdirSync(resolve('./build/commands/interaction'), { withFileTypes: true })
+        const categoryFiles = readdirSync(resolve('./dist/commands/interaction'), { withFileTypes: true })
             .filter((dirent) => dirent.isDirectory())
             .map((dirent) => dirent.name);
 
